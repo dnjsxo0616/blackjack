@@ -11,4 +11,8 @@ public class Player {
     public Player() {
         this.playerCardBox = new ArrayList<>();
     }
+
+    private void selectPlayerCard() {
+        playerNumber = SelectCard.selectCard();
+    }
 }
