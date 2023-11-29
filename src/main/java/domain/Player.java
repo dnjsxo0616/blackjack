@@ -15,4 +15,8 @@ public class Player {
     private void selectPlayerCard() {
         playerNumber = SelectCard.selectCard();
     }
+
+    private void savePlayerCard() {
+        playerCardBox.add(playerNumber);
+    }
 }
