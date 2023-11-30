@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Player {
 
-    private List<Integer> playerCardBox;
+    private final List<Integer> playerCardBox;
     private int playerNumber;
-
-    public void playPlayer(){
-        selectPlayerCard();
-        savePlayerCard();
-    }
 
     public Player() {
         this.playerCardBox = new ArrayList<>();
+    }
+
+    public void playPlayer() {
+        selectPlayerCard();
+        savePlayerCard();
     }
 
     private void selectPlayerCard() {
