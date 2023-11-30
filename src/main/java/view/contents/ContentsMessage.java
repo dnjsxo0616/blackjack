@@ -4,7 +4,10 @@ public enum ContentsMessage {
     GAME_START_MESSAGE("간단 카드 게임을 시작합니다."),
     GAME_COUNT_MESSAGE("Game %d"),
     GAME_RESULT_MESSAGE("현재 전적: %d승 %d패 %d무"),
-    GAME_RESTART_MESSAGE("한 게임 더 하시겠습니까? (Y / N)");
+    GAME_RESTART_MESSAGE("한 게임 더 하시겠습니까? (Y / N)"),
+    WIN_MESSAGE("당신이 이겼습니다."),
+    DEFEAT_MESSAGE("딜러가 이겼습니다."),
+    DRAW_MESSAGE("비겼습니다.");
 
     private final String message;
 
