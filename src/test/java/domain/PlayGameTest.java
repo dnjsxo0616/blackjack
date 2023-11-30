@@ -34,4 +34,14 @@ class PlayGameTest {
         assertEquals(0, playGame.getDrawsCount());
     }
 
+    @Test
+    @DisplayName("무승부_결과_스코어_테스트")
+    void draw() {
+        playGame.updateResult(8, 8);
+
+        assertEquals(0, playGame.getWinsCount());
+        assertEquals(0, playGame.getDefeatCount());
+        assertEquals(1, playGame.getDrawsCount());
+    }
+
 }
