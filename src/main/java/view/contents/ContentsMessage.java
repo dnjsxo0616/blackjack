@@ -9,7 +9,9 @@ public enum ContentsMessage {
     DEFEAT_MESSAGE("딜러가 이겼습니다."),
     DRAW_MESSAGE("비겼습니다."),
     GAME_STOP_MESSAGE("게임을 종료합니다."),
-    GAME_LAST_MESSAGE("플레이해주셔서 감사합니다.");
+    GAME_LAST_MESSAGE("플레이해주셔서 감사합니다."),
+    PLAYER_CARD_BOX("You   : "),
+    DEALER_CARD_BOX("Dealer: ");
 
     private final String message;
 
