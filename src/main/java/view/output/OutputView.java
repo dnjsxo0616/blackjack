@@ -18,4 +18,8 @@ public class OutputView {
     public static void println(ContentsMessage contentsMessage, int win, int defeat, int draw) {
         System.out.println(contentsMessage.getFormatMessage(win, defeat, draw));
     }
+
+    public static void println(String message) {
+        System.out.println(message);
+    }
 }
