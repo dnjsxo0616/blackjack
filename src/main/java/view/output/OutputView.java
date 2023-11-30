@@ -2,7 +2,7 @@ package view.output;
 
 import view.contents.ContentsMessage;
 
-public class OutputMessage {
+public class OutputView {
     public static void println(ContentsMessage contentsMessage) {
         System.out.println(contentsMessage.getMessage());
     }
