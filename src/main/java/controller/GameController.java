@@ -1,9 +1,6 @@
 package controller;
 
-import domain.Dealer;
-import domain.PlayGame;
-import domain.Player;
-import domain.ValidateInput;
+import domain.*;
 import view.contents.ContentsMessage;
 import view.input.InputView;
 import view.output.OutputView;
@@ -17,8 +14,7 @@ public class GameController {
     private int roundCount = 0;
 
     public void GamePlay() {
-        Player player = new Player();
-        Dealer dealer = new Dealer();
+        CardManagement cardManagement = new CardManagement();
         PlayGame playGame = new PlayGame();
 
         OutputView.print(ContentsMessage.GAME_START_MESSAGE);
@@ -29,27 +25,17 @@ public class GameController {
             roundCount++;
             OutputView.println(ContentsMessage.GAME_COUNT_MESSAGE, roundCount);
 
-            player.playPlayer();
-            dealer.playDealer();
+            cardManagement.startManagement();
 
-            playGame.updateResult(player.getPlayerNumber(), dealer.getDealerNumber());
+            playGame.updateResult(cardManagement.getPlayerNumber(), cardManagement.getDealerNumber());
 
-            OutputView.printCardBox(ContentsMessage.PLAYER_CARD_BOX, player.getPlayerCardBox());
-            OutputView.printCardBox(ContentsMessage.DEALER_CARD_BOX, dealer.getDealerCardBox());
+            OutputView.printCardBox(ContentsMessage.PLAYER_CARD_BOX, cardManagement.getPlayerCardBox());
+            OutputView.printCardBox(ContentsMessage.DEALER_CARD_BOX, cardManagement.getDealerCardBox());
 
+            OutputView.println(cardManagement.ResultMessage());
 
-            if (player.getPlayerNumber() > dealer.getDealerNumber()) {
-                OutputView.print(ContentsMessage.WIN_MESSAGE);
-                OutputView.printNewLine();
-            }
-
-            if (player.getPlayerNumber() < dealer.getDealerNumber()) {
-                OutputView.print(ContentsMessage.DEFEAT_MESSAGE);
-                OutputView.printNewLine();
-            }
-
-            OutputView.print(ContentsMessage.DRAW_MESSAGE);
             OutputView.println(ContentsMessage.GAME_RESULT_MESSAGE, playGame.getWinsCount(), playGame.getDefeatCount(), playGame.getDrawsCount());
+            OutputView.printNewLine();
 
             gameContinue = gameRound();
         }
