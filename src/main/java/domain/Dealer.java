@@ -14,4 +14,8 @@ public class Dealer {
     private void selectDealerCard() {
         dealerNumber = SelectCard.selectCard();
     }
+
+    private void saveDealerCard() {
+        dealerCardBox.add(dealerNumber);
+    }
 }
