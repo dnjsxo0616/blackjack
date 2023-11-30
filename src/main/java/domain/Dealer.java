@@ -10,4 +10,8 @@ public class Dealer {
     public Dealer() {
         this.dealerCardBox = new ArrayList<>();
     }
+
+    private void selectDealerCard() {
+        dealerNumber = SelectCard.selectCard();
+    }
 }
