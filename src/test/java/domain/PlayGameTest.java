@@ -44,4 +44,23 @@ class PlayGameTest {
         assertEquals(1, playGame.getDrawsCount());
     }
 
+    @Test
+    @DisplayName("결과_누적_테스트")
+    void totalResult() {
+        playGame.updateResult(9, 8);
+        assertEquals(1, playGame.getWinsCount());
+        assertEquals(0, playGame.getDefeatCount());
+        assertEquals(0, playGame.getDrawsCount());
+
+        playGame.updateResult(7, 8);
+        assertEquals(1, playGame.getWinsCount());
+        assertEquals(1, playGame.getDefeatCount());
+        assertEquals(0, playGame.getDrawsCount());
+
+        playGame.updateResult(8, 8);
+        assertEquals(1, playGame.getWinsCount());
+        assertEquals(1, playGame.getDefeatCount());
+        assertEquals(1, playGame.getDrawsCount());
+    }
+
 }
