@@ -24,4 +24,14 @@ class PlayGameTest {
         assertEquals(0, playGame.getDrawsCount());
     }
 
+    @Test
+    @DisplayName("딜러_승리_결과_스코어_테스트")
+    void dealerWin() {
+        playGame.updateResult(7, 8);
+
+        assertEquals(0, playGame.getWinsCount());
+        assertEquals(1, playGame.getDefeatCount());
+        assertEquals(0, playGame.getDrawsCount());
+    }
+
 }
