@@ -15,13 +15,11 @@ public class PlayGame {
     public void updateResult(int playerNumber, int dealerNumber) {
         if (playerNumber > dealerNumber) {
             winsCount++;
-        }
-
-        if (playerNumber < dealerNumber) {
+        } else if (playerNumber < dealerNumber) {
             defeatCount++;
+        } else {
+            drawsCount++;
         }
-
-        drawsCount++;
     }
 
     public int getWinsCount() {
